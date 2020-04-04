@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-auth",
+  "name": "nuxt-strapi-auth",
   "version": "1.0.0",
   "description": "Implementing Authentication and Authorization in a Nuxt.js SSR project, using @nuxtjs/auth",
   "author": "ramigs",

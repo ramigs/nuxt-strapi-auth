@@ -1,6 +1,6 @@
-# nuxt-auth
+# nuxt-strapi-auth
 
-> Implementing Authentication and Authorization in a Nuxt.js SSR project, using @nuxtjs/auth
+> Implementing Strapi Authentication and Authorization in a Nuxt.js SSR project, using @nuxtjs/auth
 
 ## Build Setup
 
