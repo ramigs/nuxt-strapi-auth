@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+
+dotenv.config()
 export default {
   mode: 'universal',
   /*
@@ -14,7 +17,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -50,6 +60,30 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** Auth Module configuration
+   ** See https://auth.nuxtjs.org/api/options.html
+   */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: `${process.env.API_AUTH_URL}/auth/local`,
+            method: 'post',
+            propertyName: 'jwt'
+          },
+          user: {
+            url: `${process.env.API_AUTH_URL}/users/me`,
+            method: 'get',
+            propertyName: false
+          },
+          logout: false
+        },
+        autoFetchUser: true
+      }
+    }
+  },
   /*
    ** Build configuration
    */
