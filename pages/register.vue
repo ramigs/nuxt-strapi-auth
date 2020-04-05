@@ -89,13 +89,13 @@ export default {
             password: this.password
           }
         )
-        /* this.$axios.setToken(true)
+        this.$axios.setToken(true)
         await this.$auth.loginWith('local', {
           data: {
             identifier: this.username,
             password: this.password
           }
-        }) */
+        })
         this.$router.push('/')
       } catch (e) {
         this.error = e.response.data.message[0].messages[0].message
